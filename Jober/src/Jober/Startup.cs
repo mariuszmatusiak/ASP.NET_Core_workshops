@@ -37,6 +37,7 @@ namespace Jober
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+            services.AddSingleton<Data.IJobsRepository, Data.DummyJobsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
