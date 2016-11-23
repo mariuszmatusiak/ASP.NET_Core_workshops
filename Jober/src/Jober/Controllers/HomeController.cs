@@ -10,7 +10,7 @@ namespace Jober.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["MyData"] = "Hello";
+           
             return View();
         }
         

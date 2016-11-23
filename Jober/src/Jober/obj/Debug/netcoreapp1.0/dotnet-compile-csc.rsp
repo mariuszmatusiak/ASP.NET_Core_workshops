@@ -196,3 +196,6 @@
 "C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Program.cs"
 "C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Startup.cs"
 "C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Controllers\HomeController.cs"
+"C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Data\DummyJobsRepository.cs"
+"C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Data\IJobsRepository.cs"
+"C:\GitHubRepo\ASP.NET_Core_workshops\Jober\src\Jober\Models\Job.cs"
