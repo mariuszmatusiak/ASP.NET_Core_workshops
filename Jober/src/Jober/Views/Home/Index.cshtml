@@ -1,9 +1,33 @@
-﻿@{
+﻿@model IEnumerable<Jober.Models.Job>
+@{
     ViewData["Title"] = "Home Page";
 }
 <div class="row">
     <div class="col-md-3"><b>Tu wyszukiwarka</b></div>
-    <div class="col-md-9"><b>tutaj oferty</b>
-   
+    <div class="col-md-9">
+       
+
+        <table class="table table-bordered" >
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Added)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Added</td>
+                    <td>@item.Description</td>
+                </tr>
+
+             }
+        </table>
     </div>
 </div>

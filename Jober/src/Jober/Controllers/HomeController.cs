@@ -10,8 +10,8 @@ namespace Jober.Controllers
     {
         public IActionResult Index()
         {
-           
-            return View();
+            var jobsRepository = new Data.DummyJobsRepository();
+            return View(jobsRepository.GetAll());
         }
         
         public IActionResult Error()
