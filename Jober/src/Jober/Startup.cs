@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -37,7 +38,8 @@ namespace Jober
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
-            services.AddSingleton<Data.IJobsRepository, Data.DummyJobsRepository>();
+            services.AddSingleton<Data.IJobsRepository, Data.SqlLiteRepository>();
+            services.AddDbContext<Data.AppDB>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
