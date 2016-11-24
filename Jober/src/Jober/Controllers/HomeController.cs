@@ -15,6 +15,16 @@ namespace Jober.Controllers
             return View(jobsRepository.GetAll());
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Models.Job item)
+        {
+            jobsRepository.Add(item);
+            return RedirectToAction("Index");
+        }
         public IActionResult Error()
         {
             return View();
