@@ -3,7 +3,35 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="row">
-    <div class="col-md-3"><b>Tu wyszukiwarka</b></div>
+    <div class="col-md-3">
+        <form asp-action="Index" asp-controller="Home" method="get">
+            <div class="form-horizontal">
+               
+                <div class="form-group">
+                    <label  class="col-md-2 control-label">Search Job</label>
+                    <div class="col-md-10">
+                        <input type="text"  name="searchValue" class="form-control" />                        
+                    </div>
+                </div>   
+                <div class="form-group">
+                    <label  class="col-md-2 control-label">City</label>
+                    <div class="col-md-10">
+                        <select name="CityId"
+                                asp-items="@ViewBag.Cities">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </div>
+                </div>
+            
+            </div>
+</form>
+
+    </div>
     <div class="col-md-9">
        
 

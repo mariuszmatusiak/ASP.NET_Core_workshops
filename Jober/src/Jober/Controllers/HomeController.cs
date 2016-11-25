@@ -11,12 +11,17 @@ namespace Jober.Controllers
             this.jobsRepository = jobsRepository;
             this.citiesRepository = citiesRepository;
         }
-
-        public IActionResult Index()
+       
+        public IActionResult Index(string searchValue, int? CityId)
         {
+            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "Id", "Name");
+
+            if (!string.IsNullOrWhiteSpace(searchValue)||CityId.HasValue)
+            {
+                return View(jobsRepository.Search(searchValue, CityId));
+            }
             return View(jobsRepository.GetAll());
         }
-
         public IActionResult Create()
         {
             ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "Id", "Name");

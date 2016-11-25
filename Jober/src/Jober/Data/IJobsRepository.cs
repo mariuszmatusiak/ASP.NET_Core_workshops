@@ -9,6 +9,7 @@ namespace Jober.Data
     public interface IJobsRepository
     {
         void Add(Job item);
-        IEnumerable<Job> GetAll();        
+        IEnumerable<Job> GetAll();
+        IEnumerable<Job> Search(string searchValue, int? CityId);   
     }
 }

@@ -209,7 +209,6 @@
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Controllers\HomeController.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\AppDB.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\CitiesRepository.cs"
-"C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\DummyJobsRepository.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\ICitiesRepository.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\IJobsRepository.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\SqlLiteRepository.cs"
