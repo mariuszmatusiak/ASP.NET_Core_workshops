@@ -29,7 +29,7 @@ namespace Jober.Data
         public IEnumerable<Job> Search(string searchValue, int? CityId)
         {
             return db.Jobs
-                .Where(x=>string.IsNullOrWhiteSpace(searchValue) || x.Title.ToUpper().Contains(searchValue.ToUpper()))
+                .Where(x=>string.IsNullOrWhiteSpace(searchValue) || x.Title.ToUpper().Contains(searchValue.ToUpper()) || x.Description.ToUpper().Contains(searchValue.ToUpper()))
                 .Where(y=> !CityId.HasValue || y.CityId == CityId.Value)
                 .Include(x => x.City)
                 .AsEnumerable();
