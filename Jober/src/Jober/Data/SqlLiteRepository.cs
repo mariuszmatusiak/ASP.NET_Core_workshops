@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Jober.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jober.Data
 {
@@ -21,7 +22,7 @@ namespace Jober.Data
 
         public IEnumerable<Job> GetAll()
         {
-            return db.Jobs.AsEnumerable();
+            return db.Jobs.Include(x=>x.City).AsEnumerable();
         }
     }
 }

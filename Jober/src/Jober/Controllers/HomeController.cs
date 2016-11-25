@@ -5,9 +5,11 @@ namespace Jober.Controllers
     public class HomeController : Controller
     {
         private Data.IJobsRepository jobsRepository;
-        public HomeController(Data.IJobsRepository jobsRepository)
+        private Data.ICitiesRepository citiesRepository;
+        public HomeController(Data.IJobsRepository jobsRepository, Data.ICitiesRepository citiesRepository)
         {
             this.jobsRepository = jobsRepository;
+            this.citiesRepository = citiesRepository;
         }
 
         public IActionResult Index()
@@ -17,6 +19,7 @@ namespace Jober.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "Id", "Name");
             return View();
         }
         [HttpPost]

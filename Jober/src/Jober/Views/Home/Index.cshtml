@@ -12,6 +12,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Title)
                 </th>
+                <th>@Html.DisplayNameFor(model => model.CityId)</th>
                 <th>
                     @Html.DisplayNameFor(model => model.Added)
                 </th>
@@ -23,6 +24,7 @@
             {
                 <tr>
                     <td>@item.Title</td>
+                    <td>@item.City.Name</td>
                     <td>@item.Added</td>
                     <td>@item.Description</td>
                 </tr>
