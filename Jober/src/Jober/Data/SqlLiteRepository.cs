@@ -10,8 +10,7 @@ namespace Jober.Data
 
         public SqlLiteRepository(AppDB db)
         {
-            this.db = db;
-           
+            this.db = db;           
         }
 
         public void Add(Job item)
