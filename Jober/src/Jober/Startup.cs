@@ -38,7 +38,8 @@ namespace Jober
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
-            services.AddSingleton<Data.IJobsRepository, Data.SqlLiteRepository>();
+            services.AddScoped<Data.IJobsRepository, Data.SqlLiteRepository>();
+            services.AddScoped<Data.ICitiesRepository, Data.CitiesRepository>();
             services.AddDbContext<Data.AppDB>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
         }
 

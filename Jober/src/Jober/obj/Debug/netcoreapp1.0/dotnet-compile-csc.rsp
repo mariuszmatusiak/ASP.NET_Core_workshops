@@ -215,6 +215,8 @@
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Data\SqlLiteRepository.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Migrations\20161124185012_initial.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Migrations\20161124185012_initial.Designer.cs"
+"C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Migrations\20161125101207_cities.cs"
+"C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Migrations\20161125101207_cities.Designer.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Migrations\AppDBModelSnapshot.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Models\City.cs"
 "C:\Github\ASP.NET_Core_workshops\Jober\src\Jober\Models\Job.cs"

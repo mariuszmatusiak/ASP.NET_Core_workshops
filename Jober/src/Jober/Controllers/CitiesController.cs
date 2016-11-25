@@ -28,7 +28,7 @@ namespace Jober.Controllers
         public IActionResult Create(Models.City item)
         {
             citiesRepository.Add(item);
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

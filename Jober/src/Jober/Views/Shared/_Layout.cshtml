@@ -32,7 +32,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Create">Create Job</a></li>                  
+                    <li><a asp-area="" asp-controller="Home" asp-action="Create">Create Job</a></li>  
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Cities
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Cities" asp-action="Index">List</a></li>
+                            <li><a asp-area="" asp-controller="Cities" asp-action="Create">Create</a></li>
+                        </ul>
+                    </li>                
                 </ul>
             </div>
         </div>
