@@ -35,7 +35,8 @@
           "Microsoft.Extensions.Logging.Abstractions": "1.1.0",
           "Microsoft.EntityFrameworkCore.Design": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0"
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0",
+          "Microsoft.Extensions.Caching.Memory": "1.1.0"
         },
         "compile": {
           "Jober.dll": {}
@@ -2874,7 +2875,8 @@
           "Microsoft.Extensions.Logging.Abstractions": "1.1.0",
           "Microsoft.EntityFrameworkCore.Design": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
-          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0"
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0",
+          "Microsoft.Extensions.Caching.Memory": "1.1.0"
         },
         "runtime": {
           "Jober.dll": {}
