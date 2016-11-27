@@ -82,6 +82,7 @@ namespace Jober.Controllers
         public IActionResult Create(Models.Job item)
         {
             jobsRepository.Add(item);
+            memoryCache.Remove("Jobs");
             return RedirectToAction("Index");
         }
 

@@ -38,6 +38,7 @@ namespace Jober
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+            services.AddMemoryCache();
             services.AddScoped<Data.IJobsRepository, Data.JobsRepository>();
             services.AddScoped<Data.ICitiesRepository, Data.CitiesRepository>();
             services.AddDbContext<Data.AppDB>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
