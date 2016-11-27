@@ -13,23 +13,24 @@ namespace Jober.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
+                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Jober.Models.City", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CityId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
-                    b.HasKey("Id");
+                    b.HasKey("CityId");
 
                     b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Jober.Models.Job", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("JobId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Added");
@@ -40,7 +41,7 @@ namespace Jober.Migrations
 
                     b.Property<string>("Title");
 
-                    b.HasKey("Id");
+                    b.HasKey("JobId");
 
                     b.HasIndex("CityId");
 

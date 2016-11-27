@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Jober.Data
 {
-    public class SqlLiteRepository : IJobsRepository
+    public class JobsRepository : IJobsRepository
     {
         private AppDB db;
 
-        public SqlLiteRepository(AppDB db)
+        public JobsRepository(AppDB db)
         {
             this.db = db;           
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Jober.Migrations
 {
@@ -12,21 +13,21 @@ namespace Jober.Migrations
                 name: "Cities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    CityId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cities", x => x.Id);
+                    table.PrimaryKey("PK_Cities", x => x.CityId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Jobs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    JobId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Added = table.Column<DateTime>(nullable: false),
                     CityId = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
@@ -34,12 +35,12 @@ namespace Jober.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Jobs", x => x.Id);
+                    table.PrimaryKey("PK_Jobs", x => x.JobId);
                     table.ForeignKey(
                         name: "FK_Jobs_Cities_CityId",
                         column: x => x.CityId,
                         principalTable: "Cities",
-                        principalColumn: "Id",
+                        principalColumn: "CityId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

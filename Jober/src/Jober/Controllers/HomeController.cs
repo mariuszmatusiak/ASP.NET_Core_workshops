@@ -14,7 +14,7 @@ namespace Jober.Controllers
        
         public IActionResult Index(string searchValue, int? CityId)
         {
-            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "Id", "Name");
+            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "CityId", "Name");
 
             if (!string.IsNullOrWhiteSpace(searchValue)||CityId.HasValue)
             {
@@ -24,7 +24,7 @@ namespace Jober.Controllers
         }
         public IActionResult Create()
         {
-            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "Id", "Name");
+            ViewBag.Cities = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(citiesRepository.GetAll(), "CityId", "Name");
             return View();
         }
         [HttpPost]

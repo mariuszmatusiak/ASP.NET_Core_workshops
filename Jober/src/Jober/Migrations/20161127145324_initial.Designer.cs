@@ -8,29 +8,30 @@ using Jober.Data;
 namespace Jober.Migrations
 {
     [DbContext(typeof(AppDB))]
-    [Migration("20161125112145_initial")]
+    [Migration("20161127145324_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
+                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Jober.Models.City", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CityId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
-                    b.HasKey("Id");
+                    b.HasKey("CityId");
 
                     b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Jober.Models.Job", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("JobId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("Added");
@@ -41,7 +42,7 @@ namespace Jober.Migrations
 
                     b.Property<string>("Title");
 
-                    b.HasKey("Id");
+                    b.HasKey("JobId");
 
                     b.HasIndex("CityId");
 

@@ -38,9 +38,9 @@ namespace Jober
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
-            services.AddScoped<Data.IJobsRepository, Data.SqlLiteRepository>();
+            services.AddScoped<Data.IJobsRepository, Data.JobsRepository>();
             services.AddScoped<Data.ICitiesRepository, Data.CitiesRepository>();
-            services.AddDbContext<Data.AppDB>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Data.AppDB>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
