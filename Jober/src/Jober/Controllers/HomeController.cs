@@ -33,7 +33,7 @@ namespace Jober.Controllers
             if (memoryCache.TryGetValue<List<Models.City>>("Cities", out cities))
             {
                 logger.LogInformation("Cities retrieved from cache.");
-            }
+            }            
             else
             {
                 cities = citiesRepository.GetAll().ToList();
@@ -69,6 +69,7 @@ namespace Jober.Controllers
                 .SetAbsoluteExpiration(TimeSpan.FromMinutes(60)));
                 logger.LogInformation("Jobs updated from DB.");
             }
+
             return View(jobs);
         }
 
